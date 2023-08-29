@@ -2,6 +2,14 @@
 
 This documentation provides an overview of the endpoints available in the Social Media API.
 
+## Table of Contents
+
+- [Authentication Endpoints](#authentication-endpoints)
+- [Friend Endpoints](#friend-endpoints)
+- [Post Endpoints](#post-endpoints)
+- [User Endpoints](#user-endpoints)
+- [Running the API](#running-the-api)
+
 ## Authentication Endpoints
 
 ### Authenticate User
