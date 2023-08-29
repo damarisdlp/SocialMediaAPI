@@ -34,30 +34,6 @@ const createPost = async (req, res) => {
   }
 };
 
-const getAllPost = async(req,res) => {
-  try {
-    const userName = req.params.username;
-
-    //Find the user by username to get the user _id
-    const user = await User.findOne({userName});
-
-    if(!user) {
-      return res.status(404).json ({message: 'User not found'});
-    }
-
-    //Find all posts with the specified user _id
-    const posts = await Post.find({ author: user._id})
-
-    if(!posts || posts.length === 0){
-      return res.status(404).json({message: 'No posts found for the user'});
-    }
-
-    res.json(posts);
-} catch (err) {
-  console.error(err.message);
-  res.status(500).send('Server Error');
-}}
-
 const deletePost = async (req, res) => {
   try {
     // Find the post by ID and verify it was created by the authenticated user
