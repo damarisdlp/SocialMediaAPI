@@ -2,13 +2,21 @@
 
 This documentation provides an overview of the endpoints available in the Social Media API.
 
+## Table of Contents
+
+- [Authentication Endpoints](#authentication-endpoints)
+- [Friend Endpoints](#friend-endpoints)
+- [Post Endpoints](#post-endpoints)
+- [User Endpoints](#user-endpoints)
+- [Running the API](#running-the-api)
+
 ## Authentication Endpoints
 
 ### Authenticate User
 
 - **URL:** `/authenticate`
 - **Method:** `POST`
-- **Description:** Authenticate a user by checking their username and password. Returns a JWT token upon successful authentication.
+- **Description:** Authenticate a user by checking their username and password. Returns a JWT token upon successful authentication. Take this token and plug it in under Bearer Token to create/deatel posts, accept/send friend requests under a specific user. New token is needed per user.
 - **Request Body:**
   - `username` (string, required): The username of the user.
   - `password` (string, required): The password of the user.
@@ -149,3 +157,24 @@ This documentation provides an overview of the endpoints available in the Social
   - `message` (string): "Document deleted successfully".
 - **Error Responses:**
   - `404 Not Found`: If the user doesn't exist.
+
+## Running the API
+
+Follow these steps to run the Social Media API locally:
+
+1. Clone the repository:
+git clone <repository-url>
+
+2. Install dependencies:
+cd <project-folder>
+npm install
+
+3. Set up environment variables:
+Replace the contents of the `.env` file in the root directory with a secret key for JWT token encryption and `<your-database-url>` with your MongoDB database URL.:
+JWT_SECRET=<your-jwt-secret>
+DATABASE_URL=<your-database-url>
+
+4. Start the Server
+node server.js
+
+5. The API will be accessible at `http://localhost:3000`.
