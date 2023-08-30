@@ -10,8 +10,6 @@ router.post('/posts',
   postController.createPost
 );
 
-router.get('/posts/:user', auth, postController.getAllPost);
-
 router.delete('/posts/:id', auth, postController.deletePost);
 
 module.exports = router;
