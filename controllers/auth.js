@@ -12,7 +12,7 @@ const authenticate = async (req, res) => {
   if (!passWord) {
     return res.status(400).json({ message: '"password" is required' });
   }
-  // Find the user by email
+  // Find the user by username
   const user = await User.findOne({ username: userName });
   // If the user doesn't exist or the password is incorrect, return an error
   if (!user) {
