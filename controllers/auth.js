@@ -14,11 +14,13 @@ const authenticate = async (req, res) => {
   }
   // Find the user by username
   const user = await User.findOne({ username: userName });
-  // If the user doesn't exist or the password is incorrect, return an error
+  // If the user doesn't exist return an error
   if (!user) {
     return res.status(401).json({ message: "Username is incorrect" });
   }
   const validPassword = await bcrypt.compare(passWord, user.password);
+
+  //If password isn't valid, return an error
   if (!validPassword) {
     console.log(passWord)
     console.log(user.password)
