@@ -80,7 +80,7 @@ This documentation provides an overview of the endpoints available in the Social
 - **Description:** Get all posts by a specific user.
 - **Authorization:** JWT token required.
 - **Request Params:**
-  - `username` (string, required): The username of the user.
+  - `id` (string, required): The object ID of the user.
 - **Response:**
   - An array of post objects.
 - **Error Responses:**
@@ -93,7 +93,7 @@ This documentation provides an overview of the endpoints available in the Social
 - **Description:** Delete a post by its ID.
 - **Authorization:** JWT token required.
 - **Request Params:**
-  - `id` (string, required): The ID of the post to be deleted.
+  - `id` (string, required): The object ID of the post to be deleted.
 - **Response:**
   - `message` (string): "Post deleted".
 - **Error Responses:**
