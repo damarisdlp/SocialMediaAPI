@@ -39,7 +39,7 @@ const getUser = async (req, res, next) => {
 
       res.json(responseData);
     } else {
-      res.json({ message: "none" });
+      res.json({ message: "No user exists" });
     }
   } catch (error) {
     console.error("Error:", error);
@@ -81,7 +81,7 @@ const deleteUser = async (req, res, next) => {
     const data = await User.findOneAndDelete({ username: user });
 
     if (data) {
-        res.json({ message: 'Document deleted successfully.' });
+        res.json({ message: 'User deleted successfully.' });
     } else {
         res.status(404).json({ message: 'No user found to delete.' });
     }

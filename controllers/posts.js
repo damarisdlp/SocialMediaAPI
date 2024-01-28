@@ -55,4 +55,28 @@ const deletePost = async (req, res) => {
   }
 };
 
-module.exports = { createPost , deletePost};
+const getPosts = async (req, res, next) => {
+  try {
+    // Find the user by ID
+    const user = await User.findById(req.params.id);
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Find all posts created by the user
+    const posts = await Post.find({ author: req.params.id });
+
+    if (posts.length > 0) {
+      return res.json(posts);
+    } else {
+      return res.json({ message: "No posts yet made by the user" });
+    }
+  } catch (error) {
+    console.error('Error fetching posts:', error.message);
+    next(error);
+  }
+};
+
+
+module.exports = { createPost , deletePost, getPosts};
