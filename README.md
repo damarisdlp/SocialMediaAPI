@@ -16,7 +16,7 @@ This documentation provides an overview of the endpoints available in the Social
 
 - **URL:** `/authenticate`
 - **Method:** `POST`
-- **Description:** Authenticate a user by checking their username and password. Returns a JWT token upon successful authentication. Take this token and plug it in under Bearer Token to create/deatel posts, accept/send friend requests under a specific user. New token is needed per user.
+- **Description:** Authenticate a user by checking their username and password. Returns a JWT token upon successful authentication. Take this token and plug it in under Bearer Token to create/delete posts, accept/send friend requests under a specific user. New token is needed per user.
 - **Request Body:**
   - `username` (string, required): The username of the user.
   - `password` (string, required): The password of the user.
@@ -75,7 +75,7 @@ This documentation provides an overview of the endpoints available in the Social
 
 ### Get All Posts by User
 
-- **URL:** `/posts/:username`
+- **URL:** `/posts/:id`
 - **Method:** `GET`
 - **Description:** Get all posts by a specific user.
 - **Authorization:** JWT token required.
