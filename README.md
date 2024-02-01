@@ -3,7 +3,7 @@
 This documentation provides an overview of the endpoints available in the Social Media API.
 
 # Video Demo
-[![Social Medi API Demo] (https://youtu.be/9n592nXkthE)
+[![Social Medi API Demo](https://img.youtube.com/vi/9n592nXkthE/0.jpg)](https://youtu.be/9n592nXkthE)
 
 ## Table of Contents
 
